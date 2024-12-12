@@ -11,6 +11,7 @@ namespace SojaExiles
 		public Animator openandclose;
 		public bool open;
 		public Transform Player;
+		public bool isLocked = false;
 
 		void Start()
 		{
@@ -20,28 +21,28 @@ namespace SojaExiles
 		public void InteractDoor()
 		{
 			print("bbbbb");
-				if (Player)
-				{
-					print("aaaa");
-					float dist = 0;
-					if (dist < 15)
-					{
-						if (open == false)
-						{
-								StartCoroutine(opening());
-						}
-						else
-						{
-							if (open == true)
-							{
-								StartCoroutine(closing());
-							}
 
+			if (Player)
+			{
+				print("aaaa");
+				float dist = 0;
+				if (dist < 15 && !isLocked)
+				{
+					if (open == false)
+					{
+							StartCoroutine(opening());
+					}
+					else
+					{
+						if (open == true)
+						{
+							StartCoroutine(closing());
 						}
 
 					}
-				}
 
+				}
+			}
 		}
 
 		IEnumerator opening()
@@ -60,6 +61,9 @@ namespace SojaExiles
 			yield return new WaitForSeconds(.5f);
 		}
 
+		public void Unlock() {
+			isLocked = false;
+		}
 
 	}
 }
