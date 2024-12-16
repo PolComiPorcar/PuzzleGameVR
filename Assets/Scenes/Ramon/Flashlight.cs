@@ -4,7 +4,7 @@ using UnityEngine;
  
 public class Flashlight : MonoBehaviour
 {
-    public Light light;
+    public new Light light;
     public bool isOn = false;
  
     void Update()
