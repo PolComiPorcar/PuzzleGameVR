@@ -26,11 +26,12 @@ namespace SojaExiles
 					float dist = 0;
 					if (dist < 10)
 					{
-						print("object name");
+						//print("object name");
+						print("Interacting with: " + gameObject.name);
 						if (open == false)
 						{
 								StartCoroutine(opening());
-							
+								
 						}
 						else
 						{
