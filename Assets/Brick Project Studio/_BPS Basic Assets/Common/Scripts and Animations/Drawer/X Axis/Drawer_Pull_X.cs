@@ -36,7 +36,7 @@ namespace SojaExiles
 						{
 							if (open == true)
 							{
-									StartCoroutine(closing());
+								StartCoroutine(closing());
 								
 							}
 

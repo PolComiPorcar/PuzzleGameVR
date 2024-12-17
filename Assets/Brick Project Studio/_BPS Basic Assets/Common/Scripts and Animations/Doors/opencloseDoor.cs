@@ -20,11 +20,8 @@ namespace SojaExiles
 
 		public void InteractDoor()
 		{
-			print("bbbbb");
-
 			if (Player)
 			{
-				print("aaaa");
 				float dist = 0;
 				if (dist < 15 && !isLocked)
 				{
