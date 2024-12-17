@@ -7,16 +7,30 @@ public class LightBar : MonoBehaviour
 {
     public GameObject bar;
     public int time;
+    private int tweenId;
+
     void Start()
     {
-        AnimatedBar();
+    
     }
+
     void Update()
     {
         
     }
+
     public void AnimatedBar()
     {
-        LeanTween.scaleX(bar, 1, time);
+        tweenId = LeanTween.scaleX(bar, 1, time).id;
+    }
+
+    public void PauseAnimation()
+    {
+        LeanTween.pause(tweenId);
+    }
+
+    public void ResumeAnimation()
+    {
+        LeanTween.resume(tweenId);
     }
 }
