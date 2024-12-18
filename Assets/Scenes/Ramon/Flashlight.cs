@@ -72,7 +72,7 @@ public class Flashlight : MonoBehaviour
         {
             LeanTween.cancel(tweenId);
         }
-        bar.transform.GetChild(1).localScale = new Vector3(1, bar.transform.GetChild(1).localScale.y, bar.transform.GetChild(1).localScale.z);
+        bar.transform.GetChild(0).localScale = new Vector3(0, bar.transform.GetChild(0).localScale.y, bar.transform.GetChild(0).localScale.z);
         AnimatedBar();
     }
 
