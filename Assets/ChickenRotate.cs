@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChickenRotate : MonoBehaviour
 {
     private float totalRotation = 0f;  // Variable para guardar el total de grados girados.
+    private bool CorrectRotation = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,7 @@ public class ChickenRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Aquí puedes agregar alguna lógica para llamar la función Rotate cuando sea necesario.
-        // Por ejemplo, si se presiona una tecla:
-        if (Input.GetKeyDown(KeyCode.R)) // Por ejemplo, cuando se presiona la tecla "R"
-        {
-            Rotate();
-        }
+
     }
 
     public void Rotate()
@@ -35,6 +31,16 @@ public class ChickenRotate : MonoBehaviour
         if (totalRotation >= 360)
         {
             totalRotation = 0;  // Restablece el contador de rotación.
+        }
+        if (totalRotation == 270)
+        {
+            CorrectRotation = true;
+            PuzzleMan.Instance.UpdateChickenState(true);
+        }
+        else
+        {
+            CorrectRotation = false;
+            PuzzleMan.Instance.UpdateChickenState(false);
         }
     }
 }
