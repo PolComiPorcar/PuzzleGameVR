@@ -9,6 +9,7 @@ public class Flashlight : MonoBehaviour
     public bool isOn = false;
 
     public GameObject bar;
+    public SoundJordi SoundGenerator;
     public int time;
     private int tweenId;
     private bool first = true;
@@ -42,6 +43,7 @@ public class Flashlight : MonoBehaviour
     public void ToggleLight()
     {
         isOn = !isOn;
+        SoundGenerator.PlaySound2();
     }
     public void AnimatedBar()
     {
@@ -62,6 +64,7 @@ public class Flashlight : MonoBehaviour
     {
         if (other.gameObject.name.StartsWith("AA_Battery"))
         {
+            SoundGenerator.PlaySound1();
             RestoreBar();
             Destroy(other.gameObject);
         }
