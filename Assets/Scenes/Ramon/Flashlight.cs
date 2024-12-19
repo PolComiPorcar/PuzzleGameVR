@@ -9,6 +9,7 @@ public class Flashlight : MonoBehaviour
     public bool isOn = false;
 
     public GameObject bar;
+    public Haptic vibracion;
     public SoundJordi SoundGenerator;
     public int time;
     private int tweenId;
@@ -43,6 +44,8 @@ public class Flashlight : MonoBehaviour
     public void ToggleLight()
     {
         isOn = !isOn;
+        vibracion.HapticImpulse(Haptic.Contol.left, 0.3f, 0.1f);
+        vibracion.HapticImpulse(Haptic.Contol.right, 0.3f, 0.1f);
         SoundGenerator.PlaySound2();
     }
     public void AnimatedBar()
@@ -60,7 +63,7 @@ public class Flashlight : MonoBehaviour
         LeanTween.resume(tweenId);
     }
 
-    private void OnCollisionEnter(UnityEngine.Collision other)
+    private void  OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.StartsWith("AA_Battery"))
         {
