@@ -399,6 +399,7 @@ MonoBehaviour:
   - {fileID: 1796674998688543395}
   - {fileID: -9083126478725777569}
   - {fileID: 7160316891198376853}
+  - {fileID: 1934883711964587513}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -459,8 +460,6 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 4420236438499168799}
-  - {fileID: 6968196892326927189}
   - {fileID: -1295315741103903713}
   - {fileID: -7545643429297236964}
   - {fileID: -710760845929316356}
@@ -469,6 +468,7 @@ MonoBehaviour:
   - {fileID: 6408224746718802071}
   - {fileID: -5023821690326440267}
   - {fileID: 1246956877804254812}
+  - {fileID: 4420236438499168799}
   - {fileID: -6529657875365622561}
   - {fileID: -1063506966263502829}
   - {fileID: 3884005435082003378}
@@ -479,6 +479,7 @@ MonoBehaviour:
   - {fileID: 3813404236352696527}
   - {fileID: 2513013163755967956}
   - {fileID: -2305120087272332614}
+  - {fileID: 6968196892326927189}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -822,12 +823,12 @@ MonoBehaviour:
   m_Name: HandTracking Metro
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: 
-  version: 
-  featureIdInternal: 
-  openxrExtensionStrings: 
-  company: 
-  priority: 0
+  nameUi: Hand Tracking Subsystem
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.handtracking
+  openxrExtensionStrings: XR_EXT_hand_tracking
+  company: Unity
+  priority: -100
   required: 0
 --- !u!114 &2161521993685186791
 MonoBehaviour:
@@ -1237,14 +1238,13 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 7559812788337990579}
-  - {fileID: 3466328478631888417}
   - {fileID: 8399289511873570732}
   - {fileID: -7655398668216461141}
   - {fileID: 984316232873788524}
   - {fileID: 5731069631430614975}
   - {fileID: 5459531728842914605}
   - {fileID: -5329930763885625147}
+  - {fileID: 7559812788337990579}
   - {fileID: -5187454171708024869}
   - {fileID: -1785399258410100894}
   - {fileID: 9159822301606762459}
@@ -1255,6 +1255,7 @@ MonoBehaviour:
   - {fileID: 2161521993685186791}
   - {fileID: 411804424910222530}
   - {fileID: 7106040364927569644}
+  - {fileID: 3466328478631888417}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
