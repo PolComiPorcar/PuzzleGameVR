@@ -59,10 +59,17 @@ namespace SojaExiles
 		}
 
 		public void Unlock() {
-			SoundGenerator.PlaySound1();
+			StartCoroutine(PlayUnlockSoundWithDelay());
+			//SoundGenerator.PlaySound1();
 			isLocked = false;
 			Debug.Log("porta desbloquejada");
 		}
+
+		IEnumerator PlayUnlockSoundWithDelay()
+        {
+            yield return new WaitForSeconds(1f); // Espera 1 segundo
+            SoundGenerator.PlaySound1(); // Reproduce el sonido
+        }
 
 	}
 }
