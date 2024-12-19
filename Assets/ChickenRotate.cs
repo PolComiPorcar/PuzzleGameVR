@@ -6,18 +6,8 @@ public class ChickenRotate : MonoBehaviour
 {
     private float totalRotation = 0f;  // Variable para guardar el total de grados girados.
     private bool CorrectRotation = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public SoundJordi SoundGenerator;
+    public Haptic vibracion;
 
     public void Rotate()
     {
@@ -31,11 +21,16 @@ public class ChickenRotate : MonoBehaviour
         if (totalRotation >= 360)
         {
             totalRotation = 0;  // Restablece el contador de rotación.
+            SoundGenerator.PlaySound2();
         }
         if (totalRotation == 270)
         {
             CorrectRotation = true;
             PuzzleMan.Instance.UpdateChickenState(true);
+            SoundGenerator.PlaySound1();
+            vibracion.HapticImpulse(Haptic.Contol.left, 0.5f, 0.1f);
+            vibracion.HapticImpulse(Haptic.Contol.right, 0.5f, 0.1f);
+
         }
         else
         {

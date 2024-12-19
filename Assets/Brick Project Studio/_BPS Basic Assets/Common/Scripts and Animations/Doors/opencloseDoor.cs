@@ -7,7 +7,7 @@ namespace SojaExiles
 {
 	public class opencloseDoor : MonoBehaviour
 	{
-
+		public SoundJordi SoundGenerator;
 		public Animator openandclose;
 		public bool open;
 		public Transform Player;
@@ -59,7 +59,9 @@ namespace SojaExiles
 		}
 
 		public void Unlock() {
+			SoundGenerator.PlaySound1();
 			isLocked = false;
+			Debug.Log("porta desbloquejada");
 		}
 
 	}

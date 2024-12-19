@@ -11,10 +11,14 @@ public class PuzzleMan : MonoBehaviour
     private bool chickenCorrect = false;  // Estado del pollo
     private bool puzzleComplete = false;  // Estado general del puzzle
     [SerializeField] private UnityEvent onPuzzleCompleted;
+    public UnityEvent OnPuzzleCompleted => onPuzzleCompleted;
+    public SoundJordi SoundGenerator;
+    public Haptic vibracion;
 
     private void Awake()
     {
         // Implementa Singleton
+        
         if (Instance == null)
         {
             Instance = this;
@@ -27,7 +31,17 @@ public class PuzzleMan : MonoBehaviour
 
     public void UpdateDrawerState(bool isOpen)
     {
-        openDrawers += isOpen ? 1 : -1;  // Incrementa o decrementa el contador
+        if(isOpen){
+            openDrawers +=1;
+            SoundGenerator.PlaySound1();
+            vibracion.HapticImpulse(Haptic.Contol.left, 0.5f, 0.1f);
+            vibracion.HapticImpulse(Haptic.Contol.right, 0.5f, 0.1f);
+        }
+        else{
+            openDrawers -=1;
+            SoundGenerator.PlaySound2();
+        }
+       // openDrawers += isOpen ? 1 : -1;  // Incresmenta o decrementa el contador
         CheckPuzzleState();
     }
 
@@ -39,11 +53,11 @@ public class PuzzleMan : MonoBehaviour
 
     private void CheckPuzzleState()
     {
-        // Verifica si los 4 cajones están abiertos y el pollo está en la rotación correcta
+        // Verifica si los 4 cajones estï¿½n abiertos y el pollo estï¿½ en la rotaciï¿½n correcta
         puzzleComplete = (openDrawers == 4 && chickenCorrect);
         if (puzzleComplete)
         {
-            Debug.Log("¡El puzzle está completo!");
+            Debug.Log("ï¿½El puzzle estï¿½ completo!");
             onPuzzleCompleted.Invoke();
         }
     }
